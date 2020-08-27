@@ -1,0 +1,3 @@
+"""
+pip install django-filebrowser
+"""

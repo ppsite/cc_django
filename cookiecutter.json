@@ -1,0 +1,14 @@
+{
+  "project_name": "cc_django",
+  "server_name": "{{cookiecutter.project_name}}.cvte.com",
+  "maintainer": "peizhenfei",
+  "email": "{{ cookiecutter.maintainer.lower()|replace(' ', '-') }}@cvte.com",
+  "use_celery": "Y",
+  "use_drf": "Y",
+  "use_account": "Y",
+  "use_grappelli": "Y",
+  "use_mdeditor": "Y",
+  "use_filebrowser": "Y",
+  "use_taggit": "Y",
+  "use_demo": "Y"
+}
