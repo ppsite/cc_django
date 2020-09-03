@@ -5,7 +5,7 @@ from account.models import User
 class UserCreationForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['email', 'password', 'mobile']
+        fields = ['username', 'email', 'password']
 
     def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)

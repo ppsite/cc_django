@@ -6,4 +6,4 @@ class AccountConfig(AppConfig):
     verbose_name = '用户管理'
 
     def ready(self):
-        pass
+        import account.signals

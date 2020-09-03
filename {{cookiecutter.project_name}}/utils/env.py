@@ -33,7 +33,7 @@ class Env(object):
         """
         value = None
         for source in self.SOURCES:
-            value = source.get(key, default=default)
+            value = source.get(key, default)
             if value:
                 break
         return value

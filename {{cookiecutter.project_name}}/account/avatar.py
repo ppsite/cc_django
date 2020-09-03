@@ -13,7 +13,7 @@ class IDAvatar(object):
     """
     url = 'http://www.gravatar.com/avatar/'
     size = 80
-    types = ['mm', 'identicon', 'monsterid', 'wavatar', 'retro']  # 头像类型列表
+    dlist = ['mm', 'identicon', 'monsterid', 'wavatar', 'retro']  # 头像类型列表
 
     def __init__(self, username: str) -> None:
         """
@@ -45,4 +45,4 @@ class IDAvatar(object):
         return self.generate(d='retro')
 
     def random(self):
-        return self.generate(d=random.choices(self.types)[0])
+        return self.generate(d=random.choices(self.dlist)[0])
