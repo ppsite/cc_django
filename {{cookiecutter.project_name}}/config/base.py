@@ -1,6 +1,6 @@
 """添加各环境公用配置"""
 from utils.env import os, Env
-from config.common.settings import *
+from config.common import *
 {%- if cookiecutter.use_grappelli.lower() == 'y' %}
 from config.common.grappelli.config import *
 {%- endif %}
