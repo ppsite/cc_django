@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-{%- if cookiecutter.use_filebrowser.lower() == 'y' %}
+{%- if cookiecutter.use_grappelli.lower() == 'y' %}
 from filebrowser.sites import site
 {%- endif %}
 from django.conf import settings
@@ -26,7 +26,7 @@ urlpatterns = [
     {%- if cookiecutter.use_drf.lower() == 'y' %}
     path('api-auth/', include('rest_framework.urls')),
     {%- endif %}
-    {%- if cookiecutter.use_filebrowser.lower() == 'y' %}
+    {%- if cookiecutter.use_grappelli.lower() == 'y' %}
     path('admin/filebrowser/', site.urls),
     {%- endif %}
     {%- if cookiecutter.use_grappelli.lower() == 'y' %}

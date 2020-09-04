@@ -9,7 +9,6 @@
   "use_account": "Y",
   "use_grappelli": "Y",
   "use_mdeditor": "Y",
-  "use_filebrowser": "Y",
   "use_taggit": "Y",
   "use_demo": "Y"
 }

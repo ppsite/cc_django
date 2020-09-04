@@ -21,6 +21,7 @@ class GenericCCHooks(object):
 
 class GrappelliCCH(GenericCCHooks):
     dir_path_list = ["config/common/grappelli/"]
+    file_path_list = [os.path.join('config/common/', 'filebrowser.py')]
 
 
 class DrfCCH(GenericCCHooks):
@@ -36,10 +37,6 @@ class CeleryCCH(GenericCCHooks):
 
 class MDEditorCCH(GenericCCHooks):
     file_path_list = [os.path.join('config/common/', 'mdeditor.py')]
-
-
-class FileBrowserCCH(GenericCCHooks):
-    file_path_list = [os.path.join('config/common/', 'filebrowser.py')]
 
 
 class AccountCCH(GenericCCHooks):
@@ -58,7 +55,6 @@ if __name__ == "__main__":
         AccountCCH('{{cookiecutter.use_account}}'),
         DemoCCH('{{cookiecutter.use_demo}}'),
         MDEditorCCH('{{cookiecutter.use_mdeditor}}'),
-        FileBrowserCCH('{{cookiecutter.use_filebrowser}}'),
     ]
 
     for cch in cch_classes:

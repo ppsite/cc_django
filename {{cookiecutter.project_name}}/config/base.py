@@ -13,7 +13,7 @@ from config.common.celery import *
 {%- if cookiecutter.use_mdeditor.lower() == 'y' %}
 from config.common.mdeditor import *
 {%- endif %}
-{%- if cookiecutter.use_filebrowser.lower() == 'y' %}
+{%- if cookiecutter.use_grappelli.lower() == 'y' %}
 from config.common.filebrowser import *
 {%- endif %}
 from config.common.logging import *
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'grappelli.dashboard',
     'grappelli',
     {%- endif %}
-    {%- if cookiecutter.use_filebrowser.lower() == 'y' %}
+    {%- if cookiecutter.use_grappelli.lower() == 'y' %}
     'filebrowser',
     {%- endif %}
     'django.contrib.admin',
