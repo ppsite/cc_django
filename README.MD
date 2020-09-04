@@ -1,3 +1,4 @@
+![image](https://github.com/pyfs/cc_django/blob/master/images/installing.jpg)
 
 生成 Django 项目的 Cookiecutter 模板
 
@@ -7,9 +8,9 @@
 2. Django 项目最佳实践
 3. 自定义用户模型支持
 4. 环境变量管理: 从文件和系统环境变量中读取
-5. 按需加载常见依赖包及相关配置
-6. 生产环境配置支持 (uwsgi | nginx)
-7. 支持 pyenv 自动创建 virtualenv
+5. 生产环境配置支持 (uwsgi | nginx)
+6. 支持 pyenv 自动创建 virtualenv
+7. 按需加载常见依赖包及相关配置
 
 > ### 1. 安装 cookiecutter
 
