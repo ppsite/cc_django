@@ -2,7 +2,7 @@
 
 生成 Django 项目的 Cookiecutter 模板
 
-> ### 支持
+# 项目支持
 
 1. 环境支持: 开发环境，测试环境，生产环境
 2. Django 项目最佳实践
@@ -12,7 +12,7 @@
 6. 支持 pyenv 自动创建 virtualenv
 7. 按需加载常见依赖包及相关配置
 
-> ### 1. 安装 cookiecutter
+# 安装 cookiecutter 
 
 MacOS 推荐使用 Home brew 安装，更多方法参考[官方部署文档](https://cookiecutter.readthedocs.io/en/1.7.0/installation.html)
 
@@ -20,7 +20,7 @@ MacOS 推荐使用 Home brew 安装，更多方法参考[官方部署文档](htt
 brew install cookiecutter
 ```
 
-> ### 2. pyenv && pyenv-virtualenv
+# 安装 pyenv 
 
 自动创建 python 虚拟环境依赖 pyenv，需在使用前安装 pyenv 和 pyenv-virtualenv
 
@@ -36,7 +36,7 @@ $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 官方文档: [pyenv](https://github.com/pyenv/pyenv)
 Pyenv插件: [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
-> ### 3. 使用该项目创建模板
+# 快速使用
 
 ```shell script
 
@@ -44,7 +44,7 @@ cookiecutter https://github.com/pyFigure/cc_django
 
 ```
 
-> ### 4. 手把手教你打造 Django 项目模板
+# 教程: 手把手教你打造 Django 项目模板
 
 [1. django 项目结构优化](https://github.com/pyfs/cc_django/blob/master/docs/1.%20django%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96.md)
 
@@ -65,4 +65,5 @@ cookiecutter https://github.com/pyFigure/cc_django
 
 > ### 5. TODO
 
-1. oauth2 支持
+1. 拆分 requirements.txt
+2. oauth2 支持
