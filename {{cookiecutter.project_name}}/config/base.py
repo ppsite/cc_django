@@ -33,8 +33,6 @@ INSTALLED_APPS = [
     {%- if cookiecutter.use_grappelli.lower() == 'y' %}
     'grappelli.dashboard',
     'grappelli',
-    {%- endif %}
-    {%- if cookiecutter.use_grappelli.lower() == 'y' %}
     'filebrowser',
     {%- endif %}
     'django.contrib.admin',

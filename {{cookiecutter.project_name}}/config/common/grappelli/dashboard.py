@@ -30,11 +30,6 @@ class CustomIndexDashboard(Dashboard):
             # 此处添加模型列表
             models=[
                 'account.models.User',
-                'blog.models.Blog',
-                'blog.models.BlogCategory',
-                'album.models.Album',
-                'album.models.AlbumCategory',
-                'comment.models.Comment'
             ]
         ))
 
