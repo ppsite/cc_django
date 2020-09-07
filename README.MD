@@ -47,13 +47,21 @@ cookiecutter https://github.com/pyFigure/cc_django
 > ### 4. 手把手教你打造 Django 项目模板
 
 [1. django 项目结构优化](https://github.com/pyfs/cc_django/blob/master/docs/1.%20django%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96.md)
+
 [2. 解决环境变量加载问题](https://github.com/pyfs/cc_django/blob/master/docs/2.%20%E8%A7%A3%E5%86%B3%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98.md)
+
 [3. 添加常用开发依赖包](https://github.com/pyfs/cc_django/blob/master/docs/3.%20%E6%B7%BB%E5%8A%A0%E5%B8%B8%E7%94%A8%E5%BC%80%E5%8F%91%E4%BE%9D%E8%B5%96%E5%8C%85.md)
+
 [4. cookiecutter功能介绍](https://github.com/pyfs/cc_django/blob/master/docs/4.%20cookiecutter%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D.md)
+
 [5. 删除jinja2多余的空行](https://github.com/pyfs/cc_django/blob/master/docs/5.%20%E5%88%A0%E9%99%A4jinja2%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E8%A1%8C.md)
+
 [6. pre_gen_project按需加载项目依赖](https://github.com/pyfs/cc_django/blob/master/docs/6.%20pre_gen_project%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96.md)
+
 [7. post_gen_project按需删除项目文件](https://github.com/pyfs/cc_django/blob/master/docs/7.%20post_gen_project%E6%8C%89%E9%9C%80%E5%88%A0%E9%99%A4%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.md)
+
 [8. 总结](https://github.com/pyfs/cc_django/blob/master/docs/8.%20%E6%80%BB%E7%BB%93.md)
+
 
 > ### 5. TODO
 
