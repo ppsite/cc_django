@@ -67,3 +67,6 @@ cookiecutter https://github.com/pyFigure/cc_django
 
 1. 拆分 requirements.txt
 2. oauth2 支持
+
+---
+![image](https://github.com/pyfs/cc_django/blob/master/docs/images/%E5%85%A5%E7%BE%A4%E5%85%AC%E5%91%8A.png)
