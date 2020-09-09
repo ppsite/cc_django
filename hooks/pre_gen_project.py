@@ -53,8 +53,8 @@ class PreGenProjectHooks(GenericHooks):
         'celery': {
             'input': '{{cookiecutter.use_celery}}',
             'pkg': [
-                'django-celery',
-                'django-celery-beat'
+                'django-celery-beat',
+                'celery'
             ],
         },
         'grappelli': {

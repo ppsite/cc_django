@@ -14,6 +14,7 @@ class GenericCCHooks(object):
             for dir_path in self.dir_path_list:
                 if os.path.exists(dir_path):
                     shutil.rmtree(dir_path)
+
             for file_name in self.file_path_list:
                 if os.path.exists(file_name):
                     os.remove(file_name)
