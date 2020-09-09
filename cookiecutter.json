@@ -1,7 +1,7 @@
 {
   "project_name": "cc_django",
   "auto_create_env": "Y",
-  "server_name": "{{cookiecutter.project_name}}.cvte.com",
+  "server_name": "{{cookiecutter.project_name.lower()}}.maotups.com",
   "maintainer": "peizhenfei",
   "email": "{{ cookiecutter.maintainer.lower()|replace(' ', '-') }}@cvte.com",
   "use_celery": "Y",
