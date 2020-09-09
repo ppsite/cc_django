@@ -82,7 +82,9 @@ class PreGenProjectHooks(GenericHooks):
             'input': '{{cookiecutter.use_drf}}',
             'pkg': [
                 'djangorestframework',
-                'djangorestframework-jwt'
+                'djangorestframework-jwt',
+                'django-filter',
+                'markdown',
             ]
         }
     }
