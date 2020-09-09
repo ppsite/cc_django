@@ -1,8 +1,8 @@
 """添加各环境公用配置"""
 from utils.env import os, Env
-from config.common import *
 {%- if cookiecutter.use_grappelli.lower() == 'y' %}
 from config.common.grappelli.config import *
+from config.common.filebrowser import *
 {%- endif %}
 {%- if cookiecutter.use_drf.lower() == 'y' %}
 from config.common.drf import *
@@ -12,9 +12,6 @@ from config.common.celery import *
 {%- endif %}
 {%- if cookiecutter.use_mdeditor.lower() == 'y' %}
 from config.common.mdeditor import *
-{%- endif %}
-{%- if cookiecutter.use_grappelli.lower() == 'y' %}
-from config.common.filebrowser import *
 {%- endif %}
 from config.common.logging import *
 
@@ -66,6 +63,8 @@ INSTALLED_APPS += [
     'account.apps.AccountConfig',
     {%- endif %}
 ]
+
+SECRET_KEY = env.get('SECRET_KEY')
 
 {%- if cookiecutter.use_grappelli.lower() == 'y' %}
 SITE_ID = 1

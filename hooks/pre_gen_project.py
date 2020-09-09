@@ -53,7 +53,6 @@ class PreGenProjectHooks(GenericHooks):
         'celery': {
             'input': '{{cookiecutter.use_celery}}',
             'pkg': [
-                'celery',
                 'django-celery',
                 'django-celery-beat'
             ],
@@ -77,6 +76,13 @@ class PreGenProjectHooks(GenericHooks):
             'pkg': [
                 'django-taggit',
                 'django-taggit-serializer'
+            ]
+        },
+        'drf': {
+            'input': '{{cookiecutter.use_drf}}',
+            'pkg': [
+                'djangorestframework',
+                'djangorestframework-jwt'
             ]
         }
     }
