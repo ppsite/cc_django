@@ -56,12 +56,18 @@ INSTALLED_APPS += [
     {%- if cookiecutter.use_grappelli.lower() == 'y' %}
     'django.contrib.sites',
     {%- endif %}
+    {%- if cookiecutter.use_demo.lower() == 'y' %}
+    'mptt',
+    {%- endif %}
 ]
 
 INSTALLED_APPS += [
     # 自研应用
     {%- if cookiecutter.use_account.lower() == 'y' %}
     'account.apps.AccountConfig',
+    {%- endif %}
+    {%- if cookiecutter.use_demo.lower() == 'y' %}
+    'project.apps.ProjectConfig',
     {%- endif %}
 ]
 

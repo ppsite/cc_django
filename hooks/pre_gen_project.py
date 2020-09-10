@@ -86,6 +86,15 @@ class PreGenProjectHooks(GenericHooks):
                 'django-filter',
                 'markdown',
             ]
+        },
+        'demo': {
+            'input': '{{cookiecutter.use_demo}}',
+            'pkg': [
+                'django-mptt',
+                'djangorestframework-recursive',
+                'django-taggit',
+                'django-taggit-serializer'
+            ]
         }
     }
 

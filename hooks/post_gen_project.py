@@ -45,7 +45,7 @@ class AccountCCH(GenericCCHooks):
 
 
 class DemoCCH(GrappelliCCH):
-    dir_path_list = ["demo"]
+    dir_path_list = ["project"]
 
 
 if __name__ == "__main__":
@@ -54,8 +54,8 @@ if __name__ == "__main__":
         DrfCCH('{{cookiecutter.use_drf}}'),
         CeleryCCH('{{cookiecutter.use_celery}}'),
         AccountCCH('{{cookiecutter.use_account}}'),
-        DemoCCH('{{cookiecutter.use_demo}}'),
         MDEditorCCH('{{cookiecutter.use_mdeditor}}'),
+        DemoCCH('{{cookiecutter.use_demo}}'),
     ]
 
     for cch in cch_classes:
