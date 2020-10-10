@@ -126,9 +126,15 @@ class PreGenProjectHooks(GenericHooks):
         cmd = ['pip', 'install'] + requirements
         check_call(cmd)
 
+    def pip_freeze_requirements(self):
+        self.warning('[!] freezing requirements ...')
+        cmd = ['pip', 'freeze', '>', 'requirements.txt']
+        check_call(cmd)
+
 
 if __name__ == '__main__':
     hooks = PreGenProjectHooks()
     hooks.check_project_name()
     hooks.pyenv_create_virtualenv()
     hooks.pip_install_requirements()
+    hooks.pip_freeze_requirements()
