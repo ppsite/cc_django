@@ -48,6 +48,10 @@ class DemoCCH(GrappelliCCH):
     dir_path_list = ["project"]
 
 
+class S2iCCH(GenericCCHooks):
+    file_path_list = ['app.sh']
+
+
 if __name__ == "__main__":
     cch_classes = [
         GrappelliCCH('{{cookiecutter.use_grappelli}}'),

@@ -30,9 +30,17 @@ class GenericHooks(object):
 
 
 class PreGenProjectHooks(GenericHooks):
-    """生成项目前的钩子"""
+    # 流水线功能清单
+    PIPELINE = [
+        'check_project_name',
+        'pyenv_create_virtualenv',
+        'pip_install_requirements',
+        'pip_freeze_requirements'
+    ]
+
+    # 生成项目前的钩子
     ENV_COMMANDS = [
-        'pyenv virtualenv 3.7.5 {{cookiecutter.project_name}}',
+        'pyenv virtualenv {{cookiecutter.python_version}} {{cookiecutter.project_name}}',
         'pyenv local {{cookiecutter.project_name}}',
         'pip install --upgrade pip'
     ]
@@ -134,7 +142,8 @@ class PreGenProjectHooks(GenericHooks):
 
 if __name__ == '__main__':
     hooks = PreGenProjectHooks()
-    hooks.check_project_name()
-    hooks.pyenv_create_virtualenv()
-    hooks.pip_install_requirements()
-    hooks.pip_freeze_requirements()
+    for attribute in hooks.PIPELINE:
+        try:
+            getattr(hooks, attribute)()
+        except AttributeError:
+            print("PreGenProjectHooks has got no Attribute: %s" % attribute)

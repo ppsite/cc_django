@@ -4,6 +4,10 @@ from config.base import *
 DEBUG = False
 SECRET_KEY = env.get('SECRET_KEY')
 
+{ % - if cookiecutter.use_celery.lower() == 'y' %}
+CELERY_BROKER_URL = env.get('CELERY_BROKER_URL')
+{ % - endif %}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

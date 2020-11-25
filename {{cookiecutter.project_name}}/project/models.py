@@ -17,6 +17,7 @@ class Project(MPTTModel, UUIDModel, OwnerModel, SoftDeletableModel, TimeStampedM
     pic = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='责任人', on_delete=models.CASCADE,
                             related_name='charged_project')
     users = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name='成员', related_name='belong_to_project')
+
     tags = TaggableManager(through=TaggedUUIDItem, blank=True)
 
     class MPTTMeta:

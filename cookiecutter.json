@@ -1,14 +1,15 @@
 {
   "project_name": "cc_django",
-  "auto_create_env": "Y",
-  "server_name": "{{cookiecutter.project_name.lower()}}.maotups.com",
   "maintainer": "peizhenfei",
   "email": "{{ cookiecutter.maintainer.lower()|replace(' ', '-') }}@cvte.com",
+  "python_version": "3.7.5",
+  "auto_create_env": "Y",
   "use_celery": "Y",
   "use_drf": "Y",
   "use_account": "Y",
   "use_grappelli": "Y",
   "use_mdeditor": "Y",
   "use_taggit": "Y",
-  "use_demo": "Y"
+  "use_demo": "Y",
+  "use_s2i": "Y"
 }

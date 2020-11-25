@@ -8,9 +8,11 @@
 2. Django 项目最佳实践
 3. 自定义用户模型支持
 4. 环境变量管理: 从文件和系统环境变量中读取
-5. 生产环境配置支持 (uwsgi | nginx)
+5. 生产环境配置支持 (uwsgi)
 6. 支持 pyenv 自动创建 virtualenv
-7. 按需加载常见依赖包及相关配置
+7. 按需加载常见依赖包及相关配置(grappelli, taggit, mdeditor)等
+8. source2image 启动脚本(支持 uwsgi, celery worker, beat, flower 独立运行)
+9. 自定义 python 版本支持(默认 3.7.5)
 
 # 安装 cookiecutter 
 

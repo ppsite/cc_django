@@ -19,10 +19,18 @@ class Env(object):
         """
         default_file = os.path.join(BASE_DIR, '.envrc')
         file_path = file_path or default_file
-        with open(file_path) as f:
-            for line in f.readlines():
-                kv = line.split()[1].split('=')
-                self.DATA[kv[0].strip()] = kv[1].strip()
+
+        # 兼容文件不存在的情况
+        if os.path.exists(file_path):
+            with open(file_path) as f:
+                for line in f.readlines():
+                    # 警号注释支持
+                    if line.startswith('#'):
+                        continue
+                    kv = line.split()[1].split('=')
+                    self.DATA[kv[0].strip()] = kv[1].strip()
+        else:
+            print("[warning]: envrc (%s) not exist, please check" % file_path)
 
     def get(self, key: str, default: str = None) -> str:
         """

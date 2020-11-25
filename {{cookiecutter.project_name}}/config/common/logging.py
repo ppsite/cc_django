@@ -1,9 +1,15 @@
-import os
-from config.settings import BASE_DIR
+"""
+推荐容器化运行，所以不建议日志落盘，直接输出到 stdout 即可；
+如果有日志落盘要求，可直接取消如下注释即可；
+"""
+
+# import os
+# from django.conf import settings
 
 # 格式化日志输出
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
-LOG_CLS = 'logging.handlers.RotatingFileHandler'
+# LOG_DIR = os.path.join(settings.BASE_DIR, 'logs')
+# LOG_CLS = 'logging.handlers.RotatingFileHandler'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -22,13 +28,13 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
-        'root': {
-            'class': LOG_CLS,
-            'formatter': 'verbose',
-            'filename': os.path.join(LOG_DIR, 'root.log'),
-            'maxBytes': 1024 * 1024 * 10,
-            'backupCount': 5
-        },
+        # 'root': {
+        #     'class': LOG_CLS,
+        #     'formatter': 'verbose',
+        #     'filename': os.path.join(LOG_DIR, 'root.log'),
+        #     'maxBytes': 1024 * 1024 * 10,
+        #     'backupCount': 5
+        # },
     },
     'loggers': {
         'django': {
@@ -41,10 +47,10 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
-        'root': {
-            'handlers': ['root', 'console'],
-            'level': 'INFO',
-            'propagate': True,
-        },
+        # 'root': {
+        #     'handlers': ['root', 'console'],
+        #     'level': 'INFO',
+        #     'propagate': True,
+        # },
     }
 }

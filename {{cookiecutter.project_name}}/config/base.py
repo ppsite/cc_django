@@ -73,9 +73,9 @@ INSTALLED_APPS += [
 
 SECRET_KEY = env.get('SECRET_KEY')
 
-{%- if cookiecutter.use_grappelli.lower() == 'y' %}
+{% if cookiecutter.use_grappelli.lower() == 'y' %}
 SITE_ID = 1
-{%- endif %}
+{% endif %}
 
 {%- if cookiecutter.use_account.lower() == 'y' %}
 # 自定义用户模型
