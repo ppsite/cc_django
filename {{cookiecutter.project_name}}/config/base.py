@@ -22,6 +22,8 @@ env = Env()
 LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 
+# todo installed app 中少了  mdeditor
+
 # 允许主机
 # todo 生产环境修改为主域名
 ALLOWED_HOSTS = ['*']
@@ -46,6 +48,9 @@ INSTALLED_APPS += [
     'taggit',
     'taggit_serializer',
     {%- endif %}
+    {%- if cookiecutter.use_mdeditor.lower() == 'y' %}
+    'mdeditor',
+    {%- endif %}
     {%- if cookiecutter.use_drf.lower() == 'y' %}
     'rest_framework',
     'rest_framework_jwt',
@@ -67,7 +72,7 @@ INSTALLED_APPS += [
     'account.apps.AccountConfig',
     {%- endif %}
     {%- if cookiecutter.use_demo.lower() == 'y' %}
-    'project.apps.ProjectConfig',
+    'demo.apps.ProjectConfig',
     {%- endif %}
 ]
 

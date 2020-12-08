@@ -4,9 +4,9 @@ from config.base import *
 DEBUG = False
 SECRET_KEY = env.get('SECRET_KEY')
 
-{ % - if cookiecutter.use_celery.lower() == 'y' %}
+{%- if cookiecutter.use_celery.lower() == 'y' %}
 CELERY_BROKER_URL = env.get('CELERY_BROKER_URL')
-{ % - endif %}
+{%- endif %}
 
 DATABASES = {
     'default': {

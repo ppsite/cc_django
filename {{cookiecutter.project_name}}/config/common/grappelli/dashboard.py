@@ -29,6 +29,9 @@ class CustomIndexDashboard(Dashboard):
             # 此处添加模型列表
             models=[
                 'account.models.User',
+                {%- if cookiecutter.use_demo.lower() == 'y' %}
+                'demo.models.Project',
+                {%- endif %}
             ]
         ))
 

@@ -27,6 +27,7 @@ class GrappelliCCH(GenericCCHooks):
 
 class DrfCCH(GenericCCHooks):
     file_path_list = [os.path.join('config/common/', 'drf.py')]
+    dir_path_list = ['utils/drf']
 
 
 class CeleryCCH(GenericCCHooks):
@@ -45,7 +46,7 @@ class AccountCCH(GenericCCHooks):
 
 
 class DemoCCH(GrappelliCCH):
-    dir_path_list = ["project"]
+    dir_path_list = ["demo"]
 
 
 class S2iCCH(GenericCCHooks):

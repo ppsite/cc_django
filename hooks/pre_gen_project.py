@@ -35,7 +35,7 @@ class PreGenProjectHooks(GenericHooks):
         'check_project_name',
         'pyenv_create_virtualenv',
         'pip_install_requirements',
-        'pip_freeze_requirements'
+        # 'pip_freeze_requirements'
     ]
 
     # 生成项目前的钩子
@@ -98,6 +98,7 @@ class PreGenProjectHooks(GenericHooks):
         'demo': {
             'input': '{{cookiecutter.use_demo}}',
             'pkg': [
+                'djangorestframework',
                 'django-mptt',
                 'djangorestframework-recursive',
                 'django-taggit',
@@ -135,6 +136,7 @@ class PreGenProjectHooks(GenericHooks):
         check_call(cmd)
 
     def pip_freeze_requirements(self):
+        """pip freeze 无效，已知 BUG"""
         self.warning('[!] freezing requirements ...')
         cmd = ['pip', 'freeze', '>', 'requirements.txt']
         check_call(cmd)

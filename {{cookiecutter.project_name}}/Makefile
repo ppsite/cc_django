@@ -4,5 +4,5 @@ clean:
 	rm -rf account/migrations
 	{%- endif %}
 	{%- if cookiecutter.use_demo.lower() == 'y' %}
-	rm -rf project/migrations
+	rm -rf demo/migrations
 	{%- endif %}

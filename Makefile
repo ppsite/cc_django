@@ -5,3 +5,4 @@ test:
 
 clean:
 	rm -rf cc_django
+	pyenv uninstall cc_django

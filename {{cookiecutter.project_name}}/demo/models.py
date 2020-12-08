@@ -1,9 +1,9 @@
 from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
-from model_utils.models import TimeStampedModel, SoftDeletableModel
+from model_utils.models import TimeStampedModel, SoftDeletableModel, UUIDModel
 from taggit.managers import TaggableManager
 from django.conf import settings
-from utils.common.models import UUIDModel, OwnerModel
+from utils.common.models import OwnerModel
 from utils.taggit.models import TaggedUUIDItem
 
 

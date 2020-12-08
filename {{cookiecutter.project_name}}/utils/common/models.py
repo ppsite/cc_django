@@ -1,5 +1,5 @@
 """自定义通用模型字段"""
-
+import json
 from django.db import models
 from django.conf import settings
 from model_utils.models import TimeFramedModel as MUTimeFramedModel

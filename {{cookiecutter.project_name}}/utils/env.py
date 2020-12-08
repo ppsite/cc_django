@@ -24,8 +24,8 @@ class Env(object):
         if os.path.exists(file_path):
             with open(file_path) as f:
                 for line in f.readlines():
-                    # 警号注释支持
-                    if line.startswith('#'):
+                    # 跳过空行，警号注释
+                    if line.isspace() or line.startswith('#'):
                         continue
                     kv = line.split()[1].split('=')
                     self.DATA[kv[0].strip()] = kv[1].strip()
