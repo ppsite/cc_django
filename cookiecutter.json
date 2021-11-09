@@ -1,0 +1,7 @@
+{
+  "PROJECT_NAME": "new_project",
+  "MAINTAINER": "peizhenfei",
+  "DRF": "Y",
+  "GRAPPELLI": "Y",
+  "CELERY": "Y"
+}
