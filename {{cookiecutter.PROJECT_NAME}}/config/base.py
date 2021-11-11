@@ -1,16 +1,13 @@
 """添加各环境公用配置"""
 from utils.env import os, Env
 from config.settings import *
+from config.plugins.logging import LOGGING
 {%- if cookiecutter.GRAPPELLI.lower() == 'y' %}
-from config.plugins.grappelli.config import GRAPPELLI_INDEX_DASHBOARD, GRAPPELLI_ADMIN_TITLE, GRAPPELLI_SWITCH_USER
+from config.plugins.grappelli import *
 {%- endif %}
 {%- if cookiecutter.DRF.lower() == 'y' %}
-from config.plugins.drf import REST_FRAMEWORK, JWT_AUTH
+from config.plugins.drf import *
 {%- endif %}
-{%- if cookiecutter.CELERY.lower() == 'y' %}
-from config.common.CELERY import *
-{%- endif %}
-from config.common.logging import LOGGING
 
 env = Env()
 
@@ -30,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites'
+    'django.contrib.sites',
     # cc_django deps
     'account',
     'utils'

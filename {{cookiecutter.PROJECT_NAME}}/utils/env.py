@@ -3,7 +3,6 @@
 Env类优先读取 .envrc 中的配置，再读取环境变量的配置
 """
 import argparse
-import json
 import os
 import threading
 from configparser import ConfigParser
@@ -19,6 +18,17 @@ class MyParser(ConfigParser):
         for key, value in data.items():
             data[key] = dict(value)
         return data
+
+
+class SingletonType(type):
+    _instance_lock = threading.Lock()
+
+    def __call__(cls, *args, **kwargs):
+        if not hasattr(cls, "_instance"):
+            with SingletonType._instance_lock:
+                if not hasattr(cls, "_instance"):
+                    cls._instance = super(SingletonType, cls).__call__(*args, **kwargs)
+        return cls._instance
 
 
 class Env(metaclass=SingletonType):
