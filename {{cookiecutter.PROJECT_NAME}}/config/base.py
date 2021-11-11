@@ -1,5 +1,5 @@
 """添加各环境公用配置"""
-from utils.env import os, Env
+from utils.env import os, env
 from config.settings import *
 from config.plugins.logging import LOGGING
 {%- if cookiecutter.GRAPPELLI.lower() == 'y' %}
@@ -9,7 +9,6 @@ from config.plugins.grappelli import *
 from config.plugins.drf import *
 {%- endif %}
 
-env = Env()
 
 # 语言/时区
 LANGUAGE_CODE = 'zh-hans'

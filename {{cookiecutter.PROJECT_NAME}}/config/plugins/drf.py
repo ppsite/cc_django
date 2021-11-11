@@ -1,7 +1,6 @@
 from datetime import timedelta
-from utils.env import Env
 
-env = Env()
+from utils.env import env
 
 RUN_ENV = env.get('RUN_ENV', 'DEVELOP')
 
@@ -18,11 +17,11 @@ REST_FRAMEWORK = {
 }
 
 if RUN_ENV == 'DEVELOP':
-  REST_FRAMEWORK.update({
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    ],
-  })
+    REST_FRAMEWORK.update({
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+            'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        ],
+    })
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(days=1),

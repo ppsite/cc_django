@@ -35,16 +35,14 @@ class Env(metaclass=SingletonType):
     data = dict()  # 保存所有变量
     envs = []  # 存储代码中用到的 env
     parser = MyParser(comment_prefixes=['#'], allow_no_value=True)
-    sync = os.environ.get("ENV_SYNC", None)
-    project = "{{cookiecutter.PROJECT_NAME}}"
 
     def __init__(self, file_path: str = ".envrc") -> None:
         self.file_path = file_path
         try:
             self.envs_from_file = self.read_from_dot_envrc()
             self.data.update(self.envs_from_file)
-        except Exception as e:
-            print(e)
+        except Exception as err:
+            print(err)
         self.data.update(os.environ)
 
     def read_from_dot_envrc(self) -> dict:
@@ -109,6 +107,9 @@ class Env(metaclass=SingletonType):
         return list(set(self.envs) ^ set(self.data.keys()))
 
 
+env = Env()
+
+
 if __name__ == "__main__":
     # 命令行解析
     parser = argparse.ArgumentParser(description="desc")
@@ -117,9 +118,8 @@ if __name__ == "__main__":
     cmd_args = parser.parse_args()
 
     # 执行命令
-    e = Env()
     try:
-        attr = getattr(e, cmd_args.cmd)
+        attr = getattr(env, cmd_args.cmd)
         params = cmd_args.params or []
         attr(*params)
     except Exception as e:

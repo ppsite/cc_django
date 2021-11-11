@@ -3,9 +3,8 @@
 配置信息默认优先从 .env 文件中读取, 然后再读取环境变量
 """
 
-from utils.env import Env
+from utils.env import env
 
-env = Env()
 
 RUN_ENV = env.get('RUN_ENV', 'DEVELOP')
 
