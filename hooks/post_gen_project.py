@@ -45,6 +45,12 @@ class CeleryCCH(GenericCCHooks):
     ]
 
 
+class TagCCH(GenericCCHooks):
+    dir_path_list = [
+        'tag'
+    ]
+
+
 class Boto3CCH(GenericCCHooks):
     file_path_list = [
         "config/plugins/storage.py",
@@ -65,7 +71,8 @@ if __name__ == "__main__":
         DrfCCH('{{cookiecutter.DRF}}'),
         CeleryCCH('{{cookiecutter.CELERY}}'),
         Boto3CCH('{{cookiecutter.BOTO3}}'),
-        MediaCCH('{{cookiecutter.MEDIA}}')
+        MediaCCH('{{cookiecutter.MEDIA}}'),
+        TagCCH('{{cookiecutter.TAG}}')
     ]
 
     for cch in cch_classes:

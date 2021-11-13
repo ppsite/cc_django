@@ -4,6 +4,7 @@
   "DRF": "Y",
   "GRAPPELLI": "Y",
   "CELERY": "Y",
+  "TAG": "Y",
   "BOTO3": "Y",
   "MEDIA": "Y"
 }
