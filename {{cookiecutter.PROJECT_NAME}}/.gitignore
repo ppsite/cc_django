@@ -130,5 +130,5 @@ dmypy.json
 
 
 # idea
-../.idea
+.idea
 .envrc

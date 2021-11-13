@@ -1,8 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
-from model_utils.models import SoftDeletableModel, UUIDModel
 from django.contrib.auth.models import BaseUserManager
-from account.avatar import IDAvatar
+from django.db import models
+from model_utils.models import SoftDeletableModel, UUIDModel
 
 
 class UserManager(BaseUserManager):
@@ -38,7 +37,6 @@ class User(UUIDModel, SoftDeletableModel, AbstractUser):
     password = models.CharField(verbose_name='密码', max_length=128, blank=True, null=True)
     email = models.EmailField(verbose_name='邮箱', max_length=25, blank=True, null=True)
     mobile = models.CharField(verbose_name='手机', max_length=11, blank=True, null=True)
-    avatar = models.CharField(verbose_name='头像', default=IDAvatar(email).wavatar(), max_length=200)
     qq = models.CharField(verbose_name='QQ号', max_length=32, blank=True, null=True)
     wx = models.CharField(verbose_name='微信', max_length=32, blank=True, null=True)
 
@@ -55,4 +53,4 @@ class User(UUIDModel, SoftDeletableModel, AbstractUser):
         verbose_name_plural = verbose_name = '- 用户模型'
 
     def __str__(self):
-        return self.username
+        return self.cn_name or self.username

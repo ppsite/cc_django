@@ -21,6 +21,11 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     # django deps
     'django.contrib.contenttypes',
+    { %- if cookiecutter.GRAPPELLI.lower() == 'y' %}
+    'grappelli',
+    'filebrowser',
+    'grappelli.dashboard',
+    { %- endif %}
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sessions',
@@ -37,11 +42,6 @@ INSTALLED_APPS += [
     {%- if cookiecutter.DRF.lower() == 'y' %}
     'rest_framework',
     'rest_framework_jwt',
-    {%- endif %}
-    {%- if cookiecutter.GRAPPELLI.lower() == 'y' %}
-    'grappelli',
-    'filebrowser',
-    'grappelli.dashboard',
     {%- endif %}
     {%- if cookiecutter.CELERY.lower() == 'y' %}
     'django_celery_beat',
