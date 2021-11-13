@@ -8,6 +8,9 @@ from config.plugins.grappelli import *
 {%- if cookiecutter.DRF.lower() == 'y' %}
 from config.plugins.drf import *
 {%- endif %}
+{%- if cookiecutter.BOTO3.lower() == 'y' %}
+from config.plugins.storage import *
+{%- endif %}
 
 
 # 语言/时区
@@ -65,5 +68,11 @@ AUTH_USER_MODEL = 'account.User'
 STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 {%- if cookiecutter.CELERY.lower() == 'y' %}
+# CELERY 消息队列
 CELERY_BROKER_URL = env.get('CELERY_BROKER_URL')
+{%- endif %}
+
+{%- if cookiecutter.BOTO3.lower() == 'y' %}
+# 默认文件系统
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 {%- endif %}

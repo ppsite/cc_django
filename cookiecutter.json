@@ -3,5 +3,7 @@
   "MAINTAINER": "peizhenfei",
   "DRF": "Y",
   "GRAPPELLI": "Y",
-  "CELERY": "Y"
+  "CELERY": "Y",
+  "BOTO3": "Y",
+  "MEDIA": "Y"
 }

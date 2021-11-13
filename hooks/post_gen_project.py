@@ -34,7 +34,6 @@ class DrfCCH(GenericCCHooks):
         'account/views.py',
         'config/plugins/drf.py'
     ]
-
     dir_path_list = [
         'utils/drf'
     ]
@@ -43,7 +42,21 @@ class DrfCCH(GenericCCHooks):
 class CeleryCCH(GenericCCHooks):
     file_path_list = [
         "{{cookiecutter.PROJECT_NAME}}/celery.py",
-        "config/common/celery.py",
+    ]
+
+
+class Boto3CCH(GenericCCHooks):
+    file_path_list = [
+        "config/plugins/storage.py",
+    ]
+    dir_path_list = [
+        'media'
+    ]
+
+
+class MediaCCH(GenericCCHooks):
+    dir_path_list = [
+        'media'
     ]
 
 
@@ -51,6 +64,8 @@ if __name__ == "__main__":
     cch_classes = [
         DrfCCH('{{cookiecutter.DRF}}'),
         CeleryCCH('{{cookiecutter.CELERY}}'),
+        Boto3CCH('{{cookiecutter.BOTO3}}'),
+        MediaCCH('{{cookiecutter.MEDIA}}')
     ]
 
     for cch in cch_classes:
