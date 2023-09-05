@@ -25,9 +25,9 @@ INSTALLED_APPS = [
     # django deps
     'django.contrib.contenttypes',
     { %- if cookiecutter.GRAPPELLI.lower() == 'y' %}
+    'grappelli.dashboard',
     'grappelli',
     'filebrowser',
-    'grappelli.dashboard',
     { %- endif %}
     'django.contrib.admin',
     'django.contrib.auth',
